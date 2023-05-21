@@ -21,13 +21,17 @@ public class ExploreService {
 	private String invalidCommandMessage;
 	
 	
+	public String getPosition(String command) {
+		return positionService.getRobotPosition(command);
+	}
+	
+	
 	public PositionDto explore(String command) {
 		PositionDto positionDto = new PositionDto("", HttpStatus.OK);
 		
 		if (commandValidator.validate(command)) {
-			String position = positionService.getRobotPosition(command);
 			positionDto.setHttpStatus(HttpStatus.OK);
-			positionDto.setMessage(position);
+			positionDto.setMessage(getPosition(command));
 		}
 		else {
 			positionDto.setHttpStatus(HttpStatus.BAD_REQUEST);
