@@ -51,7 +51,7 @@ Pronto, a aplicação deve estar online na porta `8080`.
 **ENDPOINT**
 
 ```
-GET http://localhost:8080/rest/mars/{command}
+POST http://localhost:8080/rest/mars/{command}
 ```
 
 Exemplo de endpoint: `http://localhost:8080/rest/mars/MMRMMRMM`
